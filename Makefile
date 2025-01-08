@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = parsing.c main.c helpers.c
+SRCS = valid_input.c main.c helpers.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 LIBFT = libft.a
@@ -22,5 +22,3 @@ fclean: clean
 	rm -f push_swap
 
 re: fclean all
-
-.PHONY: clean
