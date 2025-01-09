@@ -18,7 +18,7 @@ clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	make -C $(LIBFTDIR) fclean
+	make -C $(LIBFTD) fclean
 	rm -f push_swap
 
 re: fclean all

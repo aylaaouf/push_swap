@@ -20,6 +20,7 @@ typedef struct s_stack_node
 {
     int value;
     struct s_stack_node *next;
+	struct s_stack_node	*prev;
 }   t_stack_node;
 
 void	push(t_stack_node **stack, int value);
