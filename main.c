@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 00:36:16 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/07 05:34:56 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/10 11:04:42 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int main(int ac, char **av)
 {
     if (ac == 1)
-        return (0);
+        exit(0);
     valid_input(av, ac);
 }
