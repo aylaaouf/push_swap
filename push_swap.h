@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:06:57 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/08 07:04:08 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/10 13:42:07 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stack_node
 }   t_stack_node;
 
 void	push(t_stack_node **stack, int value);
+void	printf_stack(t_stack_node *stack);
 int     is_number(char *str);
 int     is_duplicates(char **input, int size);
 int     check_errors(char **input, int size);
