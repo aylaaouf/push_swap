@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:06:57 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/11 17:57:12 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/11 21:13:58 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,19 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }   t_stack_node;
 
-void	push(t_stack_node **stack, int value);
+void	push(t_stack_node **stack_a, int value);
 void	printf_stack(t_stack_node *stack);
 int     is_number(char *str);
 int     is_duplicates(char **input, int size);
 int     check_errors(char **input, int size);
 int	    count_args(char **av);
 int	    valid_input(char **input, int size);
+void	push_to_push(t_stack_node **stack_a, t_stack_node **stack_b);
 
 void	sa(t_stack_node **stack);
 void	sb(t_stack_node **stack);
 void	ss(t_stack_node **stack_a, t_stack_node **stack_b);
+void pa(t_stack_node **stack_a, t_stack_node **stack_b);
+void pb(t_stack_node **stack_a, t_stack_node **stack_b);
 
 # endif

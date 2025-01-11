@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 05:58:08 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/10 11:51:32 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/11 22:20:18 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,4 +137,30 @@ void	rrr(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	rra(stack_a);
 	rrb(stack_b);
+}
+
+void pa(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+	t_stack_node *current;
+
+	current = *stack_b;
+	while (current)
+	{
+		push(stack_a, current->value);
+		current = current->next;
+	}
+	*stack_b = NULL;
+}
+
+void pb(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+	t_stack_node *current;
+
+	current = *stack_a;
+	while (current)
+	{
+	    push(stack_b, current->value);
+	    current = current->next;
+	}
+	*stack_a = NULL;
 }

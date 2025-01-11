@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 07:16:42 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/11 18:07:29 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/11 20:45:47 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	printf_stack(t_stack_node *stack)
 	}
 }
 
-void	push(t_stack_node **stack, int value)
+void	push(t_stack_node **stack_a, int value)
 {
 	t_stack_node	*new_node;
 	t_stack_node	*current;
@@ -46,15 +46,30 @@ void	push(t_stack_node **stack, int value)
 		return ;
 	new_node->value = value;
 	new_node->next = NULL;
-	if (!*stack)
-		*stack = new_node;
+	if (!*stack_a)
+		*stack_a = new_node;
 	else
 	{
-		current = *stack;
+		current = *stack_a;
 		while (current->next)
 			current = current->next;
 		current->next = new_node;
 	}
+}
+
+void	push_to_push(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+	t_stack_node	*current;
+
+	if (!*stack_a)
+		return ;
+	current = *stack_a;
+	while (current->next)
+	{
+		push(stack_b, current->value);
+		current = current->next;
+	}
+	*stack_a = NULL;
 }
 
 int	is_sorted(t_stack_node **stack)
