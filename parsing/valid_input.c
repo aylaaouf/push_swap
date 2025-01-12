@@ -6,11 +6,12 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:09:09 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/07 09:48:40 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/12 22:29:48 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "parsing.h"
+#include "../push_swap.h"
 
 int is_spase(char **input)
 {

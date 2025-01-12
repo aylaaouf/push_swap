@@ -6,11 +6,12 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 07:16:42 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/11 20:45:47 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/12 22:29:53 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
+#include "../push_swap.h"
 
 int	count_args(char **av)
 {
