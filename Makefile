@@ -14,7 +14,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -L $(LIBFTD) -l ft -o $(NAME)
 
 clean:
-	make -C $(LIBFTD) clean
+	make -C $(LIBFTD) fclean
 	rm -f $(OBJS)
 
 fclean: clean
