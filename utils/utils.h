@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 17:04:57 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/12 22:43:33 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:44:47 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int     count_args(char **av);
 void    printf_stack(t_stack_node *stack);
 void	push(t_stack_node **stack_a, int value);
 void	push_to_push(t_stack_node **stack_a, t_stack_node **stack_b);
-int     is_sorted(t_stack_node **stack);
+int     is_sorted(t_stack_node *stack);
 
 void    swap(t_stack_node **stack);
 void	sa(t_stack_node **stack);

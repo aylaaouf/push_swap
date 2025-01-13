@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 07:16:42 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/12 22:29:53 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:45:12 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,12 @@ void	push_to_push(t_stack_node **stack_a, t_stack_node **stack_b)
 	*stack_a = NULL;
 }
 
-int	is_sorted(t_stack_node **stack)
+int	is_sorted(t_stack_node *stack)
 {
 	t_stack_node	*first;
 	t_stack_node	*second;
 
-	first = *stack;
+	first = stack;
 	while (first->next)
 	{
 		second = first->next;

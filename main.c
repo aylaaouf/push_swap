@@ -6,14 +6,14 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 00:36:16 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/12 22:53:18 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/13 20:57:11 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "utils/utils.h"
 
-void build(int ac, char **input, t_stack_node **stack_a, t_stack_node **stack_b)
+void into_stack(int ac, char **input, t_stack_node **stack_a)
 {
     int i;
     int value;
@@ -39,8 +39,14 @@ void build(int ac, char **input, t_stack_node **stack_a, t_stack_node **stack_b)
         }
         i++;
     }
-    pb(stack_a, stack_b);
-    printf_stack(*stack_b);
+}
+
+void    algo(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+    if (!is_sorted(*stack_a))
+    {
+        sort_stack(stack_a, stack_b);
+    }
 }
 
 int main(int ac, char **av)
@@ -53,6 +59,7 @@ int main(int ac, char **av)
 	if (ac == 1)
 		exit(0);
 	valid_input(av, ac);
-	build(ac, av, &stack_a, &stack_b);
-    sort_stack(stack_b);
+	into_stack(ac, av, &stack_a);
+    algo(&stack_a, &stack_b);
+    printf_stack(stack_a);
 }

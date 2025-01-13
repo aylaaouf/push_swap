@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:56:01 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/12 22:30:08 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/13 11:21:36 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,26 @@ void push_b(t_stack_node **stack_a, t_stack_node **stack_b)
 
 void pa(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	t_stack_node *current;
+	t_stack_node *head;
 
-	current = *stack_b;
-	while (current)
-	{
-		push(stack_a, current->value);
-		current = current->next;
-	}
-	*stack_b = NULL;
+	if (!(*stack_b))
+		return ;
+	head = *stack_b;
+	*stack_b = (*stack_b)->next;
+	head->next = *stack_a;
+	*stack_a = head;
 	write(1, "pa\n", 3);
 }
 
 void pb(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	t_stack_node *current;
+	t_stack_node	*head;
 
-	current = *stack_a;
-	while (current)
-	{
-	    push(stack_b, current->value);
-	    current = current->next;
-	}
-	*stack_a = NULL;
+	if (!(*stack_a))
+		return ;
+	head = *stack_a;
+	*stack_a = (*stack_a)->next;
+	head->next = *stack_b;
+	*stack_b = head;
 	write(1, "pb\n", 3);
 }

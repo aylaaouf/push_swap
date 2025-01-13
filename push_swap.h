@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:06:57 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/12 22:40:32 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/13 10:02:57 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@
 //     struct s_stack_node *next;
 // 	struct s_stack_node	*prev;
 // }   t_stack_node;
-
-//void build(int ac, char **input, t_stack_node **stack_a, t_stack_node **stack_b);
 
 # endif
