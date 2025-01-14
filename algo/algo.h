@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 17:02:41 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/13 17:47:24 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/14 22:09:49 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 #include "../utils/utils.h"
 #include "../push_swap.h"
-#include "../utils/utils.h"
 
 typedef struct s_stack_node t_stack_node;
 
@@ -25,7 +24,8 @@ void	bubble_sort(int *array, int size);
 int	    *sorted_array(t_stack_node *stack);
 void	chunks(int *array, int size, int chunk_size, t_stack_node **stack_a, t_stack_node **stack_b);
 void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b);
-
+int	    find_max(t_stack_node *stack_b);
+int	    find_position(t_stack_node *stack_b, int max);
 
 void	find_and_push_max(t_stack_node **stack_a, t_stack_node **stack_b);
 
