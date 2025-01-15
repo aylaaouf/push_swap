@@ -6,15 +6,15 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:06:57 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/13 10:02:57 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:24:12 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "libft/libft.h"
 #include "algo/algo.h"
+#include "libft/libft.h"
 #include "parsing/parsing.h"
 #include "utils/utils.h"
 

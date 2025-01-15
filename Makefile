@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = algo/algo.c algo/algo2.c parsing/valid_input.c utils/operations.c utils/operations2.c utils/operations3.c utils/helpers.c main.c
+SRCS = main.c algo/algo.c algo/algo2.c parsing/valid_input.c utils/operations.c utils/operations2.c utils/operations3.c utils/helpers.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 LIBFT = libft.a
