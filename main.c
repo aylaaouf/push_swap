@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 00:36:16 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/14 22:00:06 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:58:49 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ int main(int ac, char **av)
 	valid_input(av, ac);
 	into_stack(ac, av, &stack_a);
     algo(&stack_a, &stack_b);
-    printf_stack(stack_a);
+    //printf_stack(stack_a);
 }

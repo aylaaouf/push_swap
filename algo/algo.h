@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 17:02:41 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/15 12:31:16 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:46:45 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b);
 int		total_size(t_stack_node *stack);
 void	bubble_sort(int *array, int size);
 int	    *sorted_array(t_stack_node *stack);
-void	chunks(int *array, int size, int chunk_size, t_stack_node **stack_a, t_stack_node **stack_b);
+void	chunks(int *array, int stack_size, int chunk_size, t_stack_node **stack_a, t_stack_node **stack_b);
 int	    find_max(t_stack_node *stack_b);
 int	    find_position(t_stack_node *stack_b, int max);
 

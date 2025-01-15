@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 16:57:58 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/15 12:30:45 by aylaaouf         ###   ########.fr       */
+/*   Created: 2025/01/15 12:36:44 by aylaaouf          #+#    #+#             */
+/*   Updated: 2025/01/15 12:48:32 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "algo.h"
 #include "../utils/utils.h"
+#include "algo.h"
 #include "../push_swap.h"
-
 
 int		total_size(t_stack_node *stack)
 {
