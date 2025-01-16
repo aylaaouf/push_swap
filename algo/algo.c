@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 12:38:28 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/15 22:12:49 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/16 21:14:47 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,20 @@ void	chunks(int *array, int stack_size, int chunk_size, t_stack_node **stack_a, 
 	int	end;
 
 	i = 0;
+	start = 0;
+	end = chunk_size;
 	while (i < stack_size && (*stack_a))
 	{
-		start = i;
-		end = i + chunk_size;
 		if (end >= stack_size)
 			end = stack_size;
-		while (start < end)
+		while (start < end && (*stack_a))
 		{
 			if ((*stack_a)->value <= array[start])
 			{
 				pb(stack_a, stack_b);
 				rb(stack_b);
 				start++;
+				end++;
 			}
 			else if ((*stack_a)->value <= array[end])
 			{
@@ -70,6 +71,7 @@ void	chunks(int *array, int stack_size, int chunk_size, t_stack_node **stack_a, 
 				if ((*stack_b) && (*stack_b)->next && (*stack_b)->value < (*stack_b)->next->value)
 					sb(stack_b);
 				start++;
+				end++;
 			}
 			else
 			{
@@ -88,10 +90,11 @@ void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 
 	array = sorted_array(*stack_a);
 	stack_size = total_size(*stack_a);
-	if (stack_size < 100)
+	chunk_size = 0;
+	if (stack_size >= 100)
+		chunk_size = total_size(*stack_a) / 11;
+	else
 		chunk_size = total_size(*stack_a) / 6;
-	else if (stack_size >= 100)
-		chunk_size = total_size(*stack_a) / 13;
 	chunks(array, stack_size, chunk_size, stack_a, stack_b);
 	while (*stack_b)
 		find_and_push_max(stack_a, stack_b);
