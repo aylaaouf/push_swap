@@ -10,17 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "algo/algo.h"
-#include "libft/libft.h"
-#include "parsing/parsing.h"
-#include "utils/utils.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <stddef.h>
+# include "algo/algo.h"
+# include "libft/libft.h"
+# include "parsing/parsing.h"
+# include "utils/utils.h"
+# include <stddef.h>
+# include <stdio.h>
+# include <stdlib.h>
 
 // typedef struct s_stack_node
 // {
@@ -29,4 +28,4 @@
 // 	struct s_stack_node	*prev;
 // }   t_stack_node;
 
-# endif
+#endif

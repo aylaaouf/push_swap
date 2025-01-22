@@ -6,18 +6,18 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 12:36:44 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/15 12:48:32 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/21 20:16:11 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
 #include "../utils/utils.h"
 #include "algo.h"
-#include "../push_swap.h"
 
-int		total_size(t_stack_node *stack)
+int	total_size(t_stack_node *stack)
 {
 	t_stack_node	*current;
-	int	i;
+	int				i;
 
 	current = stack;
 	i = 0;
@@ -32,8 +32,8 @@ int		total_size(t_stack_node *stack)
 void	bubble_sort(int *array, int size)
 {
 	int	i;
-	int j;
-	int tmp;
+	int	j;
+	int	tmp;
 
 	i = 0;
 	while (i < size)
@@ -58,7 +58,7 @@ int	*sorted_array(t_stack_node *stack)
 	int				*array;
 	int				size;
 	t_stack_node	*current;
-	int	i;
+	int				i;
 
 	size = total_size(stack);
 	array = (int *)malloc(size * sizeof(int));
@@ -77,12 +77,11 @@ int	*sorted_array(t_stack_node *stack)
 
 int	find_max(t_stack_node *stack_b)
 {
-	t_stack_node *current;
-	int	max;
+	t_stack_node	*current;
+	int				max;
 
 	if (!stack_b)
-		return (0); 
-
+		return (0);
 	current = stack_b;
 	max = current->value;
 	while (current)
@@ -97,7 +96,7 @@ int	find_max(t_stack_node *stack_b)
 int	find_position(t_stack_node *stack_b, int max)
 {
 	t_stack_node	*current;
-	int	pos;
+	int				pos;
 
 	pos = 0;
 	current = stack_b;

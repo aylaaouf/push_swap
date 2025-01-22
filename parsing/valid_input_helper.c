@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   valid_input_helper.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 16:24:18 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/21 23:12:56 by aylaaouf         ###   ########.fr       */
+/*   Created: 2025/01/21 17:51:46 by aylaaouf          #+#    #+#             */
+/*   Updated: 2025/01/21 23:28:27 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
+#include "parsing.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	valid_input_helper(char **input, char *arr)
 {
-	size_t	i;
-	size_t	j;
-	size_t	len;
-	char	*str;
+	char	**numbers;
+	int		size;
+	int		i;
 
-	if (!s1 || !s2)
-		return (NULL);
+	numbers = ft_split(arr, ' ');
+	size = count_args(numbers);
 	i = 0;
-	j = 0;
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	while (s1[i])
+	if (!check_errors(numbers, size))
 	{
-		str[j++] = s1[i++];
+		write(1, "Erro2\n", 6);
+		exit(1);
 	}
-	i = 0;
-	while (s2[i])
+	if (!is_spase(input))
 	{
-		str[j++] = s2[i++];
+		write(1, "Erro3\n", 6);
+		exit(1);
 	}
-	str[j] = '\0';
-	return (str);
+	while (numbers[i])
+	{
+		free(numbers[i]);
+		i++;
+	}
+	free(numbers);
 }

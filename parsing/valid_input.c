@@ -6,14 +6,14 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:09:09 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/12 22:29:48 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/21 23:23:21 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
 #include "../push_swap.h"
+#include "parsing.h"
 
-int is_spase(char **input)
+int	is_spase(char **input)
 {
 	int	i;
 	int	k;
@@ -21,7 +21,7 @@ int is_spase(char **input)
 	i = 1;
 	while (input[i])
 	{
-		k = 0;	
+		k = 0;
 		while (input[i][k] == ' ' || input[i][k] == '\t')
 			k++;
 		if (input[i][k] == '\0')
@@ -53,8 +53,8 @@ int	is_number(char *str)
 
 int	is_duplicates(char **input, int size)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -90,42 +90,32 @@ int	check_errors(char **input, int size)
 
 int	valid_input(char **input, int size)
 {
-	char *arr;
-    char **numbers;  
-    int i;
-    int	k;
+	char	*arr;
+	int		i;
+	char	*tmp;
 
-    if (size == 1)
-        return (0);
-    arr = ft_strdup("");
-    i = 1;
-    k = 0;
-    while (i < size)
-    {
-	if (!input[i][0])    
+	arr = ft_strdup("");
+	i = 1;
+	while (i < size)
 	{
-		write(2, "Erro1\n", 6);
-		exit(1);
+		if (!input[i][0])
+		{
+			free(arr);
+			write(2, "Erro1\n", 6);
+			exit(1);
+		}
+		tmp = ft_strjoin(arr, input[i]);
+		free(arr);
+		arr = tmp;
+		if (i < size - 1)
+		{
+			tmp = ft_strjoin(arr, " ");
+			free(arr);
+			arr = tmp;
+		}
+		i++;
 	}
-        arr = ft_strjoin(arr, input[i]);
-        if (i < size - 1)
-        {
-		arr = ft_strjoin(arr, " ");
-        }
-	k++;
-        i++;
-    }
-    numbers = ft_split(arr, ' ');
-    i = count_args(numbers);
-    if (!check_errors(numbers, i))
-    {
-        write(2, "Erro2\n", 6);
-        exit(1);
-    }
-    if (!is_spase(input))
-    {
-	    write(2, "Erro3\n", 6);
-	    exit(1);
-    }
-    return (0);
+	valid_input_helper(input, arr);
+	free(arr);
+	return (0);
 }

@@ -6,16 +6,16 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 07:16:42 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/13 12:45:12 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/22 00:56:47 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
 #include "../push_swap.h"
+#include "utils.h"
 
 int	count_args(char **av)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (av[i])
@@ -27,7 +27,7 @@ int	count_args(char **av)
 
 void	printf_stack(t_stack_node *stack)
 {
-	t_stack_node *current;
+	t_stack_node	*current;
 
 	current = stack;
 	while (current)
@@ -56,21 +56,6 @@ void	push(t_stack_node **stack_a, int value)
 			current = current->next;
 		current->next = new_node;
 	}
-}
-
-void	push_to_push(t_stack_node **stack_a, t_stack_node **stack_b)
-{
-	t_stack_node	*current;
-
-	if (!*stack_a)
-		return ;
-	current = *stack_a;
-	while (current->next)
-	{
-		push(stack_b, current->value);
-		current = current->next;
-	}
-	*stack_a = NULL;
 }
 
 int	is_sorted(t_stack_node *stack)
