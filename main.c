@@ -13,9 +13,9 @@
 #include "push_swap.h"
 #include "utils/utils.h"
 
-void free_spliting(char **string)
+void	free_spliting(char **string)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (string[i])

@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 17:02:41 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/22 02:13:56 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/22 15:48:40 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int							find_max(t_stack_node *stack_b);
 int							find_position(t_stack_node *stack_b, int max);
 void						find_and_push_max(t_stack_node **stack_a,
 								t_stack_node **stack_b);
-void						sort_stack_2(t_stack_node **stack_a, t_stack_node **stack_b);
-// void    sort2(t_stack_node **stack_a);
+int							find_min(t_stack_node **stack_a);
+void						sort_stack_2(t_stack_node **stack_a,
+								t_stack_node **stack_b);
 
 #endif

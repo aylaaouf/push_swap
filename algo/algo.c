@@ -43,8 +43,8 @@ void	find_and_push_max(t_stack_node **stack_a, t_stack_node **stack_b)
 	}
 }
 
-void	chunks_helper(t_stack_node **stack_a, t_stack_node **stack_b,
-		int start, int end)
+void	chunks_helper(t_stack_node **stack_a, t_stack_node **stack_b, int start,
+		int end)
 {
 	int	*array;
 
@@ -73,8 +73,8 @@ void	chunks_helper(t_stack_node **stack_a, t_stack_node **stack_b,
 	free(array);
 }
 
-void	chunks(int stack_size, int chunk_size,
-		t_stack_node **stack_a, t_stack_node **stack_b)
+void	chunks(int stack_size, int chunk_size, t_stack_node **stack_a,
+		t_stack_node **stack_b)
 {
 	int i, (start), (end);
 	i = 0;
