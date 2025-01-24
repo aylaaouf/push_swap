@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:09:09 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/22 16:05:33 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 01:21:32 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,5 @@ int	valid_input(char **input, int size)
 		i++;
 	}
 	valid_input_helper(input, arr);
-	return (0, free(arr));
+	return (free(arr), 0);
 }

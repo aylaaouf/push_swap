@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:54:56 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/20 17:31:14 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 01:35:55 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,41 +40,43 @@ void	rr(t_stack_node **stack_a, t_stack_node **stack_b)
 
 void	rra(t_stack_node **stack_a)
 {
-	t_stack_node	*first;
+	t_stack_node	*b_last;
 	t_stack_node	*last;
 
-	if (!*stack_a || !(*stack_a)->next)
+	if (!stack_a || !(*stack_a)->next)
 		return ;
-	first = *stack_a;
+	b_last = NULL;
 	last = *stack_a;
 	while (last->next)
+	{
+		b_last = last;
 		last = last->next;
+	}
+	if (b_last)
+		b_last->next = NULL;
+	last->next = *stack_a;
 	*stack_a = last;
-	last->prev->next = NULL;
-	first->prev = last;
-	last->prev = NULL;
-	last->next = first;
-	first->prev = last;
-	write(1, "rra\n", 4);
+	write(1, "rrb\n", 4);
 }
 
 void	rrb(t_stack_node **stack_b)
 {
-	t_stack_node	*first;
+	t_stack_node	*b_last;
 	t_stack_node	*last;
 
-	if (!*stack_b || !(*stack_b)->next)
+	if (!stack_b || !(*stack_b)->next)
 		return ;
-	first = *stack_b;
+	b_last = NULL;
 	last = *stack_b;
 	while (last->next)
+	{
+		b_last = last;
 		last = last->next;
+	}
+	if (b_last)
+		b_last->next = NULL;
+	last->next = *stack_b;
 	*stack_b = last;
-	last->prev->next = NULL;
-	first->prev = last;
-	last->prev = NULL;
-	last->next = first;
-	first->prev = last;
 	write(1, "rrb\n", 4);
 }
 
