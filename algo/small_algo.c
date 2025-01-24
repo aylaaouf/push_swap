@@ -6,14 +6,13 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 00:35:19 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 02:05:25 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 03:39:55 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include "../utils/utils.h"
 #include "algo.h"
-
 
 void	sort2(t_stack_node **stack_a)
 {
@@ -28,29 +27,21 @@ void	sort3(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	int	max;
 	int	pos;
-	
+
 	(void)stack_b;
 	max = find_max(*stack_a);
 	pos = find_position(*stack_a, max);
 	if (pos == 0)
-	{
 		ra(stack_a);
-	}
 	else if (pos == 1)
-	{
 		rra(stack_a);
-	}
 	sort2(stack_a);
 }
 
-void	sort4(t_stack_node **stack_a, t_stack_node **stack_b)
+void	push_min(t_stack_node **stack_a, int pos)
 {
-	int	min;
-	int	pos;
-	int i;
+	int	i;
 
-	min = find_min(stack_a);
-	pos = find_position(*stack_a, min);
 	i = 1;
 	while (i > 0)
 	{
@@ -73,6 +64,16 @@ void	sort4(t_stack_node **stack_a, t_stack_node **stack_b)
 		pb(stack_a, stack_b);
 		i--;
 	}
+}
+
+void	sort4(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+	int	min;
+	int	pos;
+
+	min = find_min(stack_a);
+	pos = find_position(*stack_a, min);
+	push_min(stack_a);
 	sort3(stack_a, stack_b);
 	pa(stack_a, stack_b);
 }
@@ -81,32 +82,10 @@ void	sort5(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	int	min;
 	int	pos;
-	int i;
 
 	min = find_min(stack_a);
 	pos = find_position(*stack_a, min);
-	i = 1;
-	while (i > 0)
-	{
-		if (pos <= (total_size(*stack_a) / 2))
-		{
-			while (pos > 0)
-			{
-				ra(stack_a);
-				pos--;
-			}
-		}
-		else
-		{
-			while (pos < total_size(*stack_a))
-			{
-				rra(stack_a);
-				pos++;
-			}
-		}
-		pb(stack_a, stack_b);
-		i--;
-	}
+	push_min(stack_a, pos);
 	sort4(stack_a, stack_b);
 	pa(stack_a, stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:47:16 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/22 15:48:06 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 03:17:53 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 int	find_min(t_stack_node **stack_a)
 {
-	t_stack_node	*current;
 	int				min;
+	t_stack_node	*current;
 
 	current = *stack_a;
 	min = current->value;

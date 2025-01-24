@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 00:36:16 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 02:40:55 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 03:24:07 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,8 @@ void	free_spliting(char **string)
 
 void	into_stack(int ac, char **input, t_stack_node **stack_a)
 {
-	int		i;
-	int		value;
-	char	**string;
-	char	**tmp;
-
+	int i, (value);
+	char	**string, (**tmp);
 	i = 1;
 	while (i < ac)
 	{
