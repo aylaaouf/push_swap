@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 12:38:28 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 02:20:13 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 03:04:58 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	chunks(int stack_size, int chunk_size, t_stack_node **stack_a,
 	if (stack_size <= 5)
 	{
 		sort_stack_2(stack_a, stack_b);
-		exit(0);
+		return ;
 	}
 	while (i < stack_size && (*stack_a))
 	{
