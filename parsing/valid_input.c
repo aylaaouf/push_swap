@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:09:09 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 01:21:32 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:13:26 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int	valid_input(char **input, int size)
 		if (!input[i][0])
 		{
 			free(arr);
-			write(2, "Erro1\n", 6);
+			ft_putstr_fd("Error\n", 2);
 			exit(1);
 		}
 		tmp = ft_strjoin(arr, input[i]);

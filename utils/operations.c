@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 05:58:08 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 02:51:24 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 08:59:06 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,29 @@ void	swap(t_stack_node **stack)
 	*stack = second;
 }
 
-void	sa(t_stack_node **stack)
+void	sa(t_stack_node **stack, int x)
 {
 	swap(stack);
-	write(1, "sa\n", 3);
+	if (x == 1)
+		write(1, "sa\n", 3);
 }
 
-void	sb(t_stack_node **stack)
+void	sb(t_stack_node **stack, int x)
 {
 	swap(stack);
-	write(1, "sb\n", 3);
+	if (x == 1)
+		write(1, "sb\n", 3);
 }
 
-void	ss(t_stack_node **stack_a, t_stack_node **stack_b)
+void	ss(t_stack_node **stack_a, t_stack_node **stack_b, int x)
 {
-	sa(stack_a);
-	sb(stack_b);
-	write(1, "ss\n", 3);
+	sa(stack_a, 0);
+	sb(stack_b, 0);
+	if (x == 1)
+		write(1, "ss\n", 3);
 }
 
-void	ra(t_stack_node **stack_a)
+void	ra(t_stack_node **stack_a, int x)
 {
 	t_stack_node	*first;
 	t_stack_node	*last;
@@ -62,5 +65,6 @@ void	ra(t_stack_node **stack_a)
 	last->next = first;
 	first->prev = last;
 	first->next = NULL;
-	write(1, "ra\n", 3);
+	if (x == 1)
+		write(1, "ra\n", 3);
 }

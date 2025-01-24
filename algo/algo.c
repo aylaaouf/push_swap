@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 12:38:28 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 03:04:58 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:11:12 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	find_and_push_max(t_stack_node **stack_a, t_stack_node **stack_b)
 		{
 			while (pos > 0)
 			{
-				rb(stack_b);
+				rb(stack_b, 1);
 				pos--;
 			}
 		}
@@ -35,11 +35,11 @@ void	find_and_push_max(t_stack_node **stack_a, t_stack_node **stack_b)
 		{
 			while (pos < total_size(*stack_b))
 			{
-				rrb(stack_b);
+				rrb(stack_b, 1);
 				pos++;
 			}
 		}
-		pa(stack_a, stack_b);
+		pa(stack_a, stack_b, 1);
 	}
 }
 
@@ -53,22 +53,22 @@ void	chunks_helper(t_stack_node **stack_a, t_stack_node **stack_b, int start,
 	{
 		if ((*stack_a)->value <= array[start])
 		{
-			pb(stack_a, stack_b);
-			rb(stack_b);
+			pb(stack_a, stack_b, 1);
+			rb(stack_b, 1);
 			start++;
 			end++;
 		}
 		else if ((*stack_a)->value <= array[end])
 		{
-			pb(stack_a, stack_b);
+			pb(stack_a, stack_b, 1);
 			if ((*stack_b) && (*stack_b)->next
 				&& (*stack_b)->value < (*stack_b)->next->value)
-				sb(stack_b);
+				sb(stack_b, 1);
 			start++;
 			end++;
 		}
 		else
-			ra(stack_a);
+			ra(stack_a, 1);
 	}
 	free(array);
 }

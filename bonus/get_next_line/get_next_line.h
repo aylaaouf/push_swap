@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 20:06:57 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 05:11:18 by aylaaouf         ###   ########.fr       */
+/*   Created: 2024/12/12 19:24:26 by aylaaouf          #+#    #+#             */
+/*   Updated: 2024/12/15 23:03:55 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-# include "algo/algo.h"
-# include "libft/libft.h"
-# include "parsing/parsing.h"
-# include "utils/utils.h"
-# include <stddef.h>
-# include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 
-// typedef struct s_stack_node
-// {
-//     int value;
-//     struct s_stack_node *next;
-// 	struct s_stack_node	*prev;
-// }   t_stack_node;
-void	into_stack(int ac, char **input, t_stack_node **stack_a);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_strchr(char *s, int c);
+char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *s);
 
 #endif

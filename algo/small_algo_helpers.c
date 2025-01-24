@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 04:03:12 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 04:05:39 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 04:07:49 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	push_min(t_stack_node **stack_a, t_stack_node **stack_b, int pos)
 {
-	int i;
+	int	i;
 
 	(void)stack_b;
 	i = 1;

@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:51:46 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/21 23:28:27 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:14:01 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void	valid_input_helper(char **input, char *arr)
 	i = 0;
 	if (!check_errors(numbers, size))
 	{
-		write(1, "Erro2\n", 6);
+		ft_putstr_fd("Error\n", 2);
 		exit(1);
 	}
 	if (!is_spase(input))
 	{
-		write(1, "Erro3\n", 6);
+		ft_putstr_fd("Error\n", 2);
 		exit(1);
 	}
 	while (numbers[i])

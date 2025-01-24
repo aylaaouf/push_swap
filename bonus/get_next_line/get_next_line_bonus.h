@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.h                                          :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 17:03:46 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/21 18:03:36 by aylaaouf         ###   ########.fr       */
+/*   Created: 2024/12/15 20:46:33 by aylaaouf          #+#    #+#             */
+/*   Updated: 2024/12/15 23:04:31 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSING_H
-# define PARSING_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
-# include "../push_swap.h"
-# include "../utils/utils.h"
+# include <stdlib.h>
+# include <unistd.h>
 
-int		is_spase(char **input);
-int		is_number(char *str);
-int		is_duplicates(char **input, int size);
-int		check_errors(char **input, int size);
-void	valid_input_helper(char **input, char *arr);
-int		valid_input(char **input, int size);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_strchr(char *s, int c);
+char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *s);
 
 #endif
