@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo3.c                                            :+:      :+:    :+:   */
+/*   small_algo.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 00:35:19 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/22 15:48:01 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 02:05:25 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,34 +26,53 @@ void	sort2(t_stack_node **stack_a)
 
 void	sort3(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	int	min;
+	int	max;
 	int	pos;
-
-	min = find_min(stack_a);
-	pos = find_position(*stack_a, min);
-	while (pos > 0)
+	
+	(void)stack_b;
+	max = find_max(*stack_a);
+	pos = find_position(*stack_a, max);
+	if (pos == 0)
 	{
 		ra(stack_a);
-		pos--;
 	}
-	pb(stack_a, stack_b);
+	else if (pos == 1)
+	{
+		rra(stack_a);
+	}
 	sort2(stack_a);
-	pa(stack_a, stack_b);
 }
 
 void	sort4(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	int	min;
 	int	pos;
+	int i;
 
 	min = find_min(stack_a);
 	pos = find_position(*stack_a, min);
-	while (pos > 0)
+	i = 1;
+	while (i > 0)
 	{
-		ra(stack_a);
-		pos--;
+		if (pos <= (total_size(*stack_a) / 2))
+		{
+			while (pos > 0)
+			{
+				ra(stack_a);
+				pos--;
+			}
+		}
+		else
+		{
+			while (pos < total_size(*stack_a))
+			{
+				rra(stack_a);
+				pos++;
+			}
+		}
+		pb(stack_a, stack_b);
+		i--;
 	}
-	pb(stack_a, stack_b);
 	sort3(stack_a, stack_b);
 	pa(stack_a, stack_b);
 }
@@ -62,26 +81,32 @@ void	sort5(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	int	min;
 	int	pos;
+	int i;
 
 	min = find_min(stack_a);
 	pos = find_position(*stack_a, min);
-	if (pos <= total_size(*stack_a) / 2)
+	i = 1;
+	while (i > 0)
 	{
-		while (pos > 0)
+		if (pos <= (total_size(*stack_a) / 2))
 		{
-			ra(stack_a);
-			pos--;
+			while (pos > 0)
+			{
+				ra(stack_a);
+				pos--;
+			}
 		}
-	}
-	else
-	{
-		while (pos < total_size(*stack_a))
+		else
 		{
-			rra(stack_a);
-			pos++;
+			while (pos < total_size(*stack_a))
+			{
+				rra(stack_a);
+				pos++;
+			}
 		}
+		pb(stack_a, stack_b);
+		i--;
 	}
-	pb(stack_a, stack_b);
 	sort4(stack_a, stack_b);
 	pa(stack_a, stack_b);
 }

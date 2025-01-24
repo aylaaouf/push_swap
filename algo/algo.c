@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 12:38:28 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/22 03:07:35 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 02:20:13 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void	chunks(int stack_size, int chunk_size, t_stack_node **stack_a,
 	if (stack_size <= 5)
 	{
 		sort_stack_2(stack_a, stack_b);
-		printf_stack(*stack_a);
 		exit(0);
 	}
 	while (i < stack_size && (*stack_a))
@@ -103,7 +102,7 @@ void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 	stack_size = total_size(*stack_a);
 	chunk_size = 0;
 	if (stack_size >= 100)
-		chunk_size = total_size(*stack_a) / 11;
+		chunk_size = total_size(*stack_a) / 14;
 	else
 		chunk_size = total_size(*stack_a) / 6;
 	chunks(stack_size, chunk_size, stack_a, stack_b);

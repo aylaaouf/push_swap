@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:54:56 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 01:35:55 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 02:00:45 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	rra(t_stack_node **stack_a)
 		b_last->next = NULL;
 	last->next = *stack_a;
 	*stack_a = last;
-	write(1, "rrb\n", 4);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack_node **stack_b)
