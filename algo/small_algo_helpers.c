@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 04:03:12 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 04:07:49 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 11:38:41 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	push_min(t_stack_node **stack_a, t_stack_node **stack_b, int pos)
 		{
 			while (pos > 0)
 			{
-				ra(stack_a);
+				ra(stack_a, 1);
 				pos--;
 			}
 		}
@@ -34,11 +34,11 @@ void	push_min(t_stack_node **stack_a, t_stack_node **stack_b, int pos)
 		{
 			while (pos < total_size(*stack_a))
 			{
-				rra(stack_a);
+				rra(stack_a, 1);
 				pos++;
 			}
 		}
-		pb(stack_a, stack_b);
+		pb(stack_a, stack_b, 1);
 		i--;
 	}
 }

@@ -6,11 +6,11 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 05:01:53 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 09:12:08 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 14:24:40 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../parsing/parsing.h"
+#include "../push_swap.h"
 #include "get_next_line/get_next_line.h"
 
 int main(int ac, char **av)
@@ -20,10 +20,10 @@ int main(int ac, char **av)
     char *line;
     
     stack_a = NULL;
-    line = get_next_line(0);
-    valid_input(ac, av);
+    stack_b = NULL;
+    valid_input(av, ac);
     into_stack(ac, av, &stack_a);
-    while (line)
+    while ((line = get_next_line(0)) != NULL)
     {
         if (ft_strncmp(line, "sa", 2) == 0)
             sa(&stack_a, 0);
@@ -48,6 +48,11 @@ int main(int ac, char **av)
         else if (ft_strncmp(line, "rrr", 3) == 0)
             rrr(&stack_a, &stack_b, 0);
         else
-            ft_putstr_fd("Error", 2);
+            ft_putstr_fd("Error\n", 2);
+        free(line);
     }
+    if (is_sorted(stack_a))
+        ft_putstr_fd("OK\n", 1);
+    else
+        ft_putstr_fd("KO\n", 2);
 }
