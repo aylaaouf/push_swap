@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 00:35:19 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 03:39:55 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/24 04:05:02 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,34 +38,6 @@ void	sort3(t_stack_node **stack_a, t_stack_node **stack_b)
 	sort2(stack_a);
 }
 
-void	push_min(t_stack_node **stack_a, int pos)
-{
-	int	i;
-
-	i = 1;
-	while (i > 0)
-	{
-		if (pos <= (total_size(*stack_a) / 2))
-		{
-			while (pos > 0)
-			{
-				ra(stack_a);
-				pos--;
-			}
-		}
-		else
-		{
-			while (pos < total_size(*stack_a))
-			{
-				rra(stack_a);
-				pos++;
-			}
-		}
-		pb(stack_a, stack_b);
-		i--;
-	}
-}
-
 void	sort4(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	int	min;
@@ -73,7 +45,7 @@ void	sort4(t_stack_node **stack_a, t_stack_node **stack_b)
 
 	min = find_min(stack_a);
 	pos = find_position(*stack_a, min);
-	push_min(stack_a);
+	push_min(stack_a, stack_b, pos);
 	sort3(stack_a, stack_b);
 	pa(stack_a, stack_b);
 }
@@ -85,7 +57,7 @@ void	sort5(t_stack_node **stack_a, t_stack_node **stack_b)
 
 	min = find_min(stack_a);
 	pos = find_position(*stack_a, min);
-	push_min(stack_a, pos);
+	push_min(stack_a, stack_b, pos);
 	sort4(stack_a, stack_b);
 	pa(stack_a, stack_b);
 }
