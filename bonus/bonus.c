@@ -6,53 +6,62 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 05:01:53 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 14:24:40 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/26 00:03:42 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include "get_next_line/get_next_line.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    t_stack_node *stack_a;
-    t_stack_node *stack_b;
-    char *line;
-    
-    stack_a = NULL;
-    stack_b = NULL;
-    valid_input(av, ac);
-    into_stack(ac, av, &stack_a);
-    while ((line = get_next_line(0)) != NULL)
-    {
-        if (ft_strncmp(line, "sa", 2) == 0)
-            sa(&stack_a, 0);
-        else if (ft_strncmp(line, "sb", 2) == 0)
-            sb(&stack_b, 0);
-        else if (ft_strncmp(line, "ss", 2) == 0)
-            ss(&stack_a, &stack_b, 0);
-        else if (ft_strncmp(line, "pa", 2) == 0)
-            pa(&stack_a, &stack_b, 0);
-        else if (ft_strncmp(line, "pb", 2) == 0)
-            pb(&stack_a, &stack_b, 0);
-        else if (ft_strncmp(line, "ra", 2) == 0)
-            ra(&stack_a, 0);
-        else if (ft_strncmp(line, "rb", 2) == 0)
-            rb(&stack_b, 0);
-        else if (ft_strncmp(line, "rr", 2) == 0)
-            rr(&stack_a, &stack_b, 0);
-        else if (ft_strncmp(line, "rra", 3) == 0)
-            rra(&stack_a, 0);
-        else if (ft_strncmp(line, "rrb", 3) == 0)
-            rrb(&stack_b, 0);
-        else if (ft_strncmp(line, "rrr", 3) == 0)
-            rrr(&stack_a, &stack_b, 0);
-        else
-            ft_putstr_fd("Error\n", 2);
-        free(line);
+	char			*line;
+	t_stack_node	*stack_a;
+	t_stack_node	*stack_b;
+
+	if (ac == 1)
+		exit(0);
+	stack_a = NULL;
+	stack_b = NULL;
+	if (valid_input(av, ac))
+		exit(1);
+    	into_stack(ac, av, &stack_a);
+    	line = get_next_line(0);
+    	while (line)
+	{
+		if (ft_strncmp(line, "sa\n", 3) == 0)
+			sa(&stack_a, 0);
+		else if (ft_strncmp(line, "sb\n", 3) == 0)
+			sb(&stack_b, 0);
+		else if (ft_strncmp(line, "ss\n", 3) == 0)
+			ss(&stack_a, &stack_b, 0);
+		else if (ft_strncmp(line, "pa\n", 3) == 0)
+			pa(&stack_a, &stack_b, 0);
+		else if (ft_strncmp(line, "pb\n", 3) == 0)
+			pb(&stack_a, &stack_b, 0);
+		else if (ft_strncmp(line, "ra\n", 3) == 0)
+			ra(&stack_a, 0);
+		else if (ft_strncmp(line, "rb\n", 3) == 0)
+			rb(&stack_b, 0);
+		else if (ft_strncmp(line, "rr\n", 3) == 0)
+			rr(&stack_a, &stack_b, 0);
+		else if (ft_strncmp(line, "rra\n", 4) == 0)
+			rra(&stack_a, 0);
+		else if (ft_strncmp(line, "rrb\n", 4) == 0)
+			rrb(&stack_b, 0);
+		else if (ft_strncmp(line, "rrr\n", 4) == 0)
+			rrr(&stack_a, &stack_b, 0);
+		else
+		{
+			free(line);
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
+		line = get_next_line(0);
+		free(line);
     }
-    if (is_sorted(stack_a))
+    if (is_sorted(stack_a) && !stack_b)
         ft_putstr_fd("OK\n", 1);
     else
-        ft_putstr_fd("KO\n", 2);
+        ft_putstr_fd("KO\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 19:23:40 by aylaaouf          #+#    #+#             */
-/*   Updated: 2024/12/14 23:53:55 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/25 21:00:53 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[i])
 		str[j++] = s2[i++];
 	str[j] = '\0';
-	free((void *)s1);
 	return (str);
 }
 
