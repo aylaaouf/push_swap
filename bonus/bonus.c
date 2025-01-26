@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 05:01:53 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/26 00:03:42 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/26 01:23:58 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,13 @@ int	main(int ac, char **av)
 			rrr(&stack_a, &stack_b, 0);
 		else
 		{
-			free(line);
-			ft_putstr_fd("Error\n", 2);
+			ft_putstr_fd("Erroryy\n", 2);
 			exit(1);
 		}
 		line = get_next_line(0);
 		free(line);
     }
-    if (is_sorted(stack_a) && !stack_b)
+    if (is_sorted(stack_a))
         ft_putstr_fd("OK\n", 1);
     else
         ft_putstr_fd("KO\n", 1);

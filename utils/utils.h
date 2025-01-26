@@ -30,17 +30,22 @@ int						is_sorted(t_stack_node *stack);
 void					swap(t_stack_node **stack);
 void					sa(t_stack_node **stack, int x);
 void					sb(t_stack_node **stack, int x);
-void					ss(t_stack_node **stack_a, t_stack_node **stack_b, int x);
+void					ss(t_stack_node **stack_a, t_stack_node **stack_b,
+							int x);
 void					ra(t_stack_node **stack_a, int x);
 
 void					rb(t_stack_node **stack_b, int x);
-void					rr(t_stack_node **stack_a, t_stack_node **stack_b, int x);
+void					rr(t_stack_node **stack_a, t_stack_node **stack_b,
+							int x);
 void					rra(t_stack_node **stack_a, int x);
 void					rrb(t_stack_node **stack_b, int x);
-void					rrr(t_stack_node **stack_a, t_stack_node **stack_b, int x);
+void					rrr(t_stack_node **stack_a, t_stack_node **stack_b,
+							int x);
 
 void					push_b(t_stack_node **stack_a, t_stack_node **stack_b);
-void					pa(t_stack_node **stack_a, t_stack_node **stack_b, int x);
-void					pb(t_stack_node **stack_a, t_stack_node **stack_b, int x);
+void					pa(t_stack_node **stack_a, t_stack_node **stack_b,
+							int x);
+void					pb(t_stack_node **stack_a, t_stack_node **stack_b,
+							int x);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:51:46 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/26 00:50:39 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/26 01:00:40 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ void	free_numbers(char **numbers)
 	int	i;
 
 	i = 0;
-	while (numbers[i++])
+	while (numbers[i])
+	{
 		free(numbers[i]);
+		i++;
+	}
 	free(numbers);
 }
 
@@ -46,5 +49,5 @@ void	valid_input_helper(char **input, char *arr)
 		free_numbers(numbers);
 		exit(1);
 	}
-	//free_numbers(numbers);
+	free_numbers(numbers);
 }
