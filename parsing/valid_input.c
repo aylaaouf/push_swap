@@ -6,12 +6,13 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:09:09 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/25 20:56:40 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/26 22:07:58 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include "parsing.h"
+#include "limits.h"
 
 int	is_spase(char **input)
 {
@@ -90,14 +91,16 @@ int	check_errors(char **input, int size)
 
 int	valid_input(char **input, int size)
 {
-	char	*arr, (*tmp);
+	char	*arr;
+	char	*tmp;
 	int		i;
 
 	arr = ft_strdup("");
 	i = 1;
 	while (i < size)
 	{
-		if (!input[i][0])
+		if (!input[i][0] || ft_atoi(input[i]) > INT_MAX
+				|| ft_atoi(input[i]) < INT_MIN)
 		{
 			free(arr);
 			ft_putstr_fd("Error\n", 2);
@@ -107,11 +110,7 @@ int	valid_input(char **input, int size)
 		free(arr);
 		arr = tmp;
 		if (i < size - 1)
-		{
-			tmp = ft_strjoin(arr, " ");
-			free(arr);
-			arr = tmp;
-		}
+			helper_func(tmp, &arr);
 		i++;
 	}
 	valid_input_helper(input, arr);

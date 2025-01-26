@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:51:46 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/26 04:17:59 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/26 21:32:17 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ void	free_numbers(char **numbers)
 		i++;
 	}
 	free(numbers);
+}
+
+void	helper_func(char *tmp, char **arr)
+{
+	tmp = ft_strjoin(*arr, " ");
+	free(*arr);
+	*arr = tmp;
 }
 
 void	valid_input_helper(char **input, char *arr)
