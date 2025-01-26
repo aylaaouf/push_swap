@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:51:46 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/26 01:00:40 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/26 04:17:59 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,9 @@ void	valid_input_helper(char **input, char *arr)
 {
 	char	**numbers;
 	int		size;
-	int		i;
 
 	numbers = ft_split(arr, ' ');
 	size = count_args(numbers);
-	i = 0;
 	if (!check_errors(numbers, size))
 	{
 		free(arr);
