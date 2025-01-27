@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 05:01:53 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/27 20:20:26 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/27 21:08:50 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@ void	free_stack(t_stack_node **stack)
 	}
 }
 
-void	error(char *line, t_stack_node *stack_a, t_stack_node *stack_b)
+void	error(char *line, t_stack_node *stack_a)
 {
 	free(line);
 	free_stack(&stack_a);
-	free_stack(&stack_b);
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
@@ -59,7 +58,7 @@ void	operations(char *line, t_stack_node **stack_a, t_stack_node **stack_b)
 	else if (ft_strncmp(line, "rrr\n", 4) == 0)
 		rrr(stack_a, stack_b, 0);
 	else
-		error(line, *stack_a, *stack_b);
+		error(line, *stack_a);
 }
 
 int	main(int ac, char **av)
@@ -87,6 +86,5 @@ int	main(int ac, char **av)
 	else
 		ft_putstr_fd("KO\n", 1);
 	free_stack(&stack_a);
-	free_stack(&stack_b);
 	return (0);
 }
