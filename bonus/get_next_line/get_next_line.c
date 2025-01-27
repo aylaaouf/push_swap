@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 02:46:59 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/27 20:55:05 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/27 23:15:42 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static char	*read_buffer(int fd, char *buffer)
 {
 	char	*temp_buffer;
+	char	*new;
 	int		bytes_read;
 
 	temp_buffer = malloc(sizeof(char) * BUFFER_SIZE + 1);
@@ -25,17 +26,13 @@ static char	*read_buffer(int fd, char *buffer)
 	{
 		bytes_read = read(fd, temp_buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
-		{
-			free(temp_buffer);
-			return (NULL);
-		}
+			return (free(temp_buffer), NULL);
 		temp_buffer[bytes_read] = '\0';
+		new = buffer;
 		buffer = ft_strjoin(buffer, temp_buffer);
 		if (!buffer)
-		{
-			free(temp_buffer);
-			return (NULL);
-		}
+			return (free(temp_buffer), NULL);
+		free(new);
 	}
 	free(temp_buffer);
 	return (buffer);
@@ -83,14 +80,24 @@ static char	*update_buffer(char *buffer)
 	return (new_buffer);
 }
 
+char	*helper(int fd, char *buffer)
+{
+	if (fd < 0 || BUFFER_SIZE <= 0)
+	{
+		if (buffer != NULL)
+			free(buffer);
+		return (NULL);
+	}
+	return (buffer);
+}
+
 char	*get_next_line(int fd)
 {
 	static char	*buffer;
 	char		*line;
 	char		*new_buffer;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
+	helper(fd, buffer);
 	buffer = read_buffer(fd, buffer);
 	if (!buffer)
 		return (NULL);

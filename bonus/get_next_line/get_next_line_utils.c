@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 19:23:40 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/27 20:51:17 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/27 23:04:26 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 
 	if (!s1)
-		s1 = ft_strdup("");
+		return (ft_strdup(s2));
 	if (!s2)
-		s2 = ft_strdup("");
+		return (ft_strdup(s2));
 	i = 0;
 	j = 0;
 	len = ft_strlen(s1) + ft_strlen(s2);

@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 05:01:53 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/27 21:08:50 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/27 22:57:02 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	error(char *line, t_stack_node *stack_a)
 	free(line);
 	free_stack(&stack_a);
 	ft_putstr_fd("Error\n", 2);
+	get_next_line(-1);
 	exit(1);
 }
 
