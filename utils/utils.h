@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 17:04:57 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 09:09:29 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:15:02 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_stack_node
 }						t_stack_node;
 
 int						count_args(char **av);
-void					printf_stack(t_stack_node *stack);
 void					push(t_stack_node **stack_a, int value);
 int						is_sorted(t_stack_node *stack);
 

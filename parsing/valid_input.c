@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:09:09 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/26 22:07:58 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:00:29 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,20 @@ int	is_duplicates(char **input, int size)
 {
 	int	i;
 	int	j;
+	int	error;
 
 	i = 0;
 	j = 0;
 	while (i < size)
 	{
+		error = 0;
+		ft_atoi_e(input[i], &error);
+		if (error)
+			return (1);
 		j = i + 1;
 		while (j < size)
 		{
-			if (ft_atoi(input[i]) == ft_atoi(input[j]))
+			if (ft_strcmp(input[i], input[j]) == 0)
 				return (1);
 			j++;
 		}

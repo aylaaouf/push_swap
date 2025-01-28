@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 07:16:42 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 02:36:08 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:14:50 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,6 @@ int	count_args(char **av)
 		i++;
 	}
 	return (i);
-}
-
-void	printf_stack(t_stack_node *stack)
-{
-	t_stack_node	*current;
-
-	current = stack;
-	while (current)
-	{
-		printf("%d -> ", current->value);
-		current = current->next;
-	}
 }
 
 void	push(t_stack_node **stack_a, int value)

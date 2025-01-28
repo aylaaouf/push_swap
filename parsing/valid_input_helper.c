@@ -6,12 +6,41 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:51:46 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/27 20:54:18 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:58:35 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include "parsing.h"
+
+long	ft_atoi_e(const char *str, int *error)
+{
+	int		i;
+	long	result;
+	int		sign;
+
+	i = 0;
+	result = 0;
+	sign = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+		{
+			sign *= -1;
+		}
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + str[i] - '0';
+		if ((result * sign) > 2147483647 || (result * sign) < -2147483648)
+			return (*error = 1);
+		i++;
+	}
+	return (result * sign);
+}
 
 void	free_numbers(char **numbers)
 {
