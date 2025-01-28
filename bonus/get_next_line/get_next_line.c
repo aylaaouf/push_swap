@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 02:46:59 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/27 23:15:42 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:33:12 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,15 @@ static char	*update_buffer(char *buffer)
 	return (new_buffer);
 }
 
-char	*helper(int fd, char *buffer)
+int	helper(int fd, char *buffer)
 {
 	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		if (buffer != NULL)
 			free(buffer);
-		return (NULL);
+		return (0);
 	}
-	return (buffer);
+	return (1);
 }
 
 char	*get_next_line(int fd)
@@ -97,7 +97,8 @@ char	*get_next_line(int fd)
 	char		*line;
 	char		*new_buffer;
 
-	helper(fd, buffer);
+	if (!helper(fd, buffer))
+		return (NULL);
 	buffer = read_buffer(fd, buffer);
 	if (!buffer)
 		return (NULL);
