@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 05:01:53 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/28 17:28:15 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:46:27 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,12 @@ void	operations(char *line, t_stack_node **stack_a, t_stack_node **stack_b)
 		error(line, *stack_a);
 }
 
+void	ft_error(t_stack_node **stack_b)
+{
+	ft_putstr_fd("KO\n", 1);
+	free_stack(stack_b);
+}
+
 int	main(int ac, char **av)
 {
 	char			*line;
@@ -82,10 +88,10 @@ int	main(int ac, char **av)
 		free(line);
 		line = get_next_line(0);
 	}
-	if (is_sorted(stack_a))
+	if (is_sorted(stack_a) && !stack_b)
 		ft_putstr_fd("OK\n", 1);
 	else
-		ft_putstr_fd("KO\n", 1);
+		ft_error(&stack_b);
 	free_stack(&stack_a);
 	return (0);
 }
