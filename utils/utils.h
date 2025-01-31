@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 17:04:57 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/28 16:15:02 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/31 20:33:27 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void					pa(t_stack_node **stack_a, t_stack_node **stack_b,
 							int x);
 void					pb(t_stack_node **stack_a, t_stack_node **stack_b,
 							int x);
-
+int						total_size(t_stack_node *stack);
 #endif

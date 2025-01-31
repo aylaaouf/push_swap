@@ -6,28 +6,13 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 12:36:44 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/21 20:16:11 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/31 20:47:19 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include "../utils/utils.h"
 #include "algo.h"
-
-int	total_size(t_stack_node *stack)
-{
-	t_stack_node	*current;
-	int				i;
-
-	current = stack;
-	i = 0;
-	while (current)
-	{
-		i++;
-		current = current->next;
-	}
-	return (i);
-}
 
 void	bubble_sort(int *array, int size)
 {

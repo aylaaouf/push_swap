@@ -6,12 +6,13 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:54:56 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 09:01:59 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/31 20:41:16 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include "utils.h"
+#include "../algo/algo.h"
 
 void	rb(t_stack_node **stack_b, int x)
 {
@@ -46,6 +47,8 @@ void	rra(t_stack_node **stack_a, int x)
 	t_stack_node	*b_last;
 	t_stack_node	*last;
 
+	if (total_size(*stack_a) < 2)
+		return ;
 	if (!stack_a || !(*stack_a)->next)
 		return ;
 	b_last = NULL;
@@ -68,6 +71,8 @@ void	rrb(t_stack_node **stack_b, int x)
 	t_stack_node	*b_last;
 	t_stack_node	*last;
 
+	if (total_size(*stack_b) < 2)
+		return ;
 	if (!stack_b || !(*stack_b)->next)
 		return ;
 	b_last = NULL;

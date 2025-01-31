@@ -14,11 +14,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	make -C $(LIBFTD)
 	cp $(LIBFTD)/$(LIBFT) $(NAME)
-	$(CC) $(CFLAGS) $(OBJS) -L $(LIBFTD) -l ft -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFTD)/$(LIBFT) -o $(NAME)
 
 bonus: $(OBJS_BONUS)
 	make -C $(LIBFTD)
-	$(CC) $(CFLAGS) $(OBJS_BONUS) -L $(LIBFTD) -l ft -o $(NAME_BONUS)
+	$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIBFTD)/$(LIBFT) -o $(NAME_BONUS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

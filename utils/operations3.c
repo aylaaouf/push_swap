@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:56:01 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/24 09:03:35 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/01/31 20:45:14 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,19 @@ void	pb(t_stack_node **stack_a, t_stack_node **stack_b, int x)
 	*stack_b = head;
 	if (x == 1)
 		write(1, "pb\n", 3);
+}
+
+int	total_size(t_stack_node *stack)
+{
+	t_stack_node	*current;
+	int				i;
+
+	current = stack;
+	i = 0;
+	while (current)
+	{
+		i++;
+		current = current->next;
+	}
+	return (i);
 }
