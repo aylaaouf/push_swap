@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 13:23:15 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/26 07:31:08 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/02/01 16:25:26 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	free_spliting(char **string)
 	free(string);
 }
 
-void	single_input(char **input, t_stack_node **stack_a)
+void	single_input(t_stack_node **stack_a, char *numbers)
 {
 	int		value;
 	char	**string;
 	char	**tmp;
 
-	string = ft_split(input[1], ' ');
+	string = ft_split(numbers, ' ');
 	tmp = string;
 	while (*string)
 	{
@@ -45,19 +45,29 @@ void	single_input(char **input, t_stack_node **stack_a)
 
 void	into_stack(int ac, char **input, t_stack_node **stack_a)
 {
-	int	i;
-	int	value;
+	int		i;
+	char	*numbers;
+	char	*tmp;
+	char	*new_numbers;
 
 	i = 1;
+	numbers = ft_strdup("");
+	if (!numbers)
+		return ;
 	while (i < ac)
 	{
-		if (ac == 2)
-			single_input(input, stack_a);
-		else
+		tmp = ft_strjoin(numbers, " ");
+		new_numbers = ft_strjoin(tmp, input[i]);
+		free(tmp);
+		if (!new_numbers)
 		{
-			value = ft_atoi(input[i]);
-			push(stack_a, value);
+			free(numbers);
+			return ;
 		}
+		free(numbers);
+		numbers = new_numbers;
 		i++;
 	}
+	single_input(stack_a, numbers);
+	free(numbers);
 }
