@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:51:46 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/28 16:58:35 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/02/01 03:13:14 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,33 @@ void	helper_func(char *tmp, char **arr)
 	*arr = tmp;
 }
 
+int	sign_checker(char **input, char *arr, char **numbers)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 0;
+	while (input[i])
+	{
+		j = 0;
+		while (input[i][j])
+		{
+			if ((input[i][j] == '+' || input[i][j] == '-') &&
+				!(input[i][j + 1] >= '0' && input[i][j + 1] <= '9'))
+			{
+				free(arr);
+				ft_putstr_fd("Error\n", 2);
+				free_numbers(numbers);
+				exit(1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
 void	valid_input_helper(char **input, char *arr)
 {
 	char	**numbers;
@@ -83,5 +110,6 @@ void	valid_input_helper(char **input, char *arr)
 		free_numbers(numbers);
 		exit(1);
 	}
+	sign_checker(input, arr, numbers);
 	free_numbers(numbers);
 }
