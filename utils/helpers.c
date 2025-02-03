@@ -6,7 +6,7 @@
 /*   By: aylaaouf <aylaaouf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 07:16:42 by aylaaouf          #+#    #+#             */
-/*   Updated: 2025/01/28 16:14:50 by aylaaouf         ###   ########.fr       */
+/*   Updated: 2025/02/03 19:08:27 by aylaaouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	is_sorted(t_stack_node *stack)
 	t_stack_node	*first;
 	t_stack_node	*second;
 
+	if (!stack)
+		return (0);
 	first = stack;
 	while (first->next)
 	{
